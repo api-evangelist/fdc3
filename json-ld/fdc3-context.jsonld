@@ -1,0 +1,109 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fdc3": "https://fdc3.finos.org/schemas/2.2/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "finos": "https://www.finos.org/",
+
+    "DesktopAgent": "fdc3:DesktopAgent",
+    "AppDirectory": "fdc3:AppDirectory",
+    "Application": "fdc3:Application",
+    "Intent": "fdc3:Intent",
+    "Channel": "fdc3:Channel",
+    "Context": "fdc3:Context",
+    "Instrument": "fdc3:context/instrument",
+    "InstrumentList": "fdc3:context/instrumentList",
+    "Contact": "fdc3:context/contact",
+    "ContactList": "fdc3:context/contactList",
+    "Organization": "fdc3:context/organization",
+    "Portfolio": "fdc3:context/portfolio",
+    "Position": "fdc3:context/position",
+    "Order": "fdc3:context/order",
+    "OrderList": "fdc3:context/orderList",
+    "Trade": "fdc3:context/trade",
+    "TradeList": "fdc3:context/tradeList",
+    "Valuation": "fdc3:context/valuation",
+    "Chart": "fdc3:context/chart",
+    "Country": "fdc3:context/country",
+    "Currency": "fdc3:context/currency",
+    "Email": "fdc3:context/email",
+    "Message": "fdc3:context/message",
+    "TimeRange": "fdc3:context/timeRange",
+    "Interaction": "fdc3:context/interaction",
+    "Product": "fdc3:context/product",
+    "Action": "fdc3:context/action",
+    "Nothing": "fdc3:context/nothing",
+
+    "appId": {
+      "@id": "fdc3:appId",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "fdc3:type",
+      "@type": "@vocab"
+    },
+    "version": {
+      "@id": "schema:version",
+      "@type": "xsd:string"
+    },
+    "categories": {
+      "@id": "fdc3:categories",
+      "@container": "@list"
+    },
+    "icons": {
+      "@id": "fdc3:icons",
+      "@container": "@list"
+    },
+    "screenshots": {
+      "@id": "fdc3:screenshots",
+      "@container": "@list"
+    },
+    "details": {
+      "@id": "fdc3:details"
+    },
+    "interop": {
+      "@id": "fdc3:interop"
+    },
+    "intents": {
+      "@id": "fdc3:intents",
+      "@container": "@list"
+    },
+    "listensFor": {
+      "@id": "fdc3:listensFor",
+      "@type": "@id"
+    },
+    "raises": {
+      "@id": "fdc3:raises",
+      "@type": "@id"
+    },
+    "userChannels": {
+      "@id": "fdc3:userChannels"
+    },
+    "appChannels": {
+      "@id": "fdc3:appChannels",
+      "@container": "@list"
+    },
+    "hostManifests": {
+      "@id": "fdc3:hostManifests"
+    },
+    "localizedVersions": {
+      "@id": "fdc3:localizedVersions"
+    },
+    "id": {
+      "@id": "fdc3:id"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    }
+  }
+}
