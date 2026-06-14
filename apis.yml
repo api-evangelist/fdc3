@@ -1,0 +1,188 @@
+aid: fdc3
+name: FDC3
+description: >-
+  FDC3 (Financial Desktop Connectivity and Collaboration Consortium) is an open standard hosted by FINOS
+  for interoperability between financial desktop applications. The standard defines how applications
+  launch other apps, share typed context data, raise and resolve intents across the financial desktop,
+  and register themselves in an App Directory. FDC3 eliminates the need for custom bilateral
+  agreements between software vendors and enables plug-and-play integration workflows for financial
+  services firms. Current version is 2.2, licensed under the Community Specification License 1.0
+  with code released under Apache 2.0.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Financial Services
+  - Fintech
+  - Desktop Interoperability
+  - Open Standard
+  - FINOS
+  - Context Sharing
+  - Intents
+created: '2026-06-13'
+modified: '2026-06-13'
+url: https://raw.githubusercontent.com/api-evangelist/fdc3/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: fdc3:desktop-agent-api
+    name: FDC3 Desktop Agent API
+    description: >-
+      The FDC3 Desktop Agent API is the primary interface for application interoperability on the
+      financial desktop. It provides a JavaScript/TypeScript API that applications use to open other
+      applications, raise intents to request functionality from peer apps, broadcast typed context
+      data on channels, listen for incoming context and intents, discover available applications and
+      their capabilities, and create private two-party communication channels. Desktop Agents
+      implement this API and expose it to the applications they host.
+    humanURL: https://fdc3.finos.org/docs/api/spec
+    baseURL: https://fdc3.finos.org
+    tags:
+      - Desktop Agent
+      - Intents
+      - Context Sharing
+      - Channels
+      - Financial Services
+      - Open Standard
+    properties:
+      - type: Documentation
+        url: https://fdc3.finos.org/docs/api/spec
+      - type: Reference
+        url: https://fdc3.finos.org/docs/api/ref/DesktopAgent
+      - type: GitHubRepository
+        url: https://github.com/finos/FDC3
+      - type: TypeScriptSDK
+        url: https://www.npmjs.com/package/@finos/fdc3
+      - type: Changelog
+        url: https://github.com/finos/FDC3/blob/main/CHANGELOG.md
+      - type: OpenSource
+        url: https://github.com/finos/FDC3/blob/main/LICENSE.md
+  - aid: fdc3:app-directory-api
+    name: FDC3 App Directory API
+    description: >-
+      The FDC3 App Directory (AppD) is a REST API standard for registering and discovering
+      financial desktop applications. Desktop Agents query App Directories to resolve application
+      definitions when launching apps or resolving intents. The v2 endpoints are the current
+      standard, supporting retrieval of all app definitions and lookup by appId. Authentication
+      is supported via HTTP Authorization Bearer JWT tokens. Implementations are provided by
+      vendors and financial institutions; FINOS publishes the specification and JSON schema.
+    humanURL: https://fdc3.finos.org/docs/app-directory/spec
+    baseURL: https://appd.example.com
+    tags:
+      - App Directory
+      - Application Registry
+      - REST API
+      - Financial Services
+      - Open Standard
+    properties:
+      - type: Documentation
+        url: https://fdc3.finos.org/docs/app-directory/spec
+      - type: OpenAPISpec
+        url: https://fdc3.finos.org/schemas/2.2/app-directory.html
+      - type: JSONSchema
+        url: https://fdc3.finos.org/schemas/2.2/appd.schema.json
+      - type: GitHubRepository
+        url: https://github.com/finos/FDC3
+      - type: Reference
+        url: https://fdc3.finos.org/docs/app-directory/overview
+  - aid: fdc3:context-data
+    name: FDC3 Context Data
+    description: >-
+      FDC3 Context Data defines a standard set of typed data structures used to carry information
+      between financial applications when broadcasting or raising intents. Context types include
+      instruments, positions, portfolios, contacts, organizations, orders, charts, country, currency,
+      date range, email, and more. Each context type has a JSON schema definition. Applications
+      share and receive these typed objects through the Desktop Agent API channels and intent
+      resolution, enabling interoperability without custom data mapping.
+    humanURL: https://fdc3.finos.org/docs/context/spec
+    baseURL: https://fdc3.finos.org
+    tags:
+      - Context Data
+      - JSON Schema
+      - Financial Data
+      - Instruments
+      - Open Standard
+    properties:
+      - type: Documentation
+        url: https://fdc3.finos.org/docs/context/spec
+      - type: JSONSchema
+        url: https://fdc3.finos.org/schemas/2.2/context/
+      - type: Reference
+        url: https://fdc3.finos.org/docs/context/ref/Instrument
+      - type: GitHubRepository
+        url: https://github.com/finos/FDC3
+  - aid: fdc3:intents
+    name: FDC3 Intents
+    description: >-
+      FDC3 Intents are standardized verbs that applications use to request functionality from
+      other applications on the financial desktop. Standard intents include ViewChart, ViewQuote,
+      ViewNews, ViewAnalysis, ViewInstrument, ViewHoldings, ViewOrders, ViewResearch, ViewProfile,
+      ViewInteractions, ViewMessages, ViewChat, StartCall, StartChat, StartEmail, CreateInteraction,
+      and CreateOrUpdateProfile. Applications declare which intents they handle in their App
+      Directory entry, and the Desktop Agent routes intent requests to appropriate handler apps.
+    humanURL: https://fdc3.finos.org/docs/intents/spec
+    baseURL: https://fdc3.finos.org
+    tags:
+      - Intents
+      - Interoperability
+      - Financial Services
+      - Workflow
+      - Open Standard
+    properties:
+      - type: Documentation
+        url: https://fdc3.finos.org/docs/intents/spec
+      - type: Reference
+        url: https://fdc3.finos.org/docs/intents/ref/ViewChart
+      - type: GitHubRepository
+        url: https://github.com/finos/FDC3
+  - aid: fdc3:desktop-agent-bridging
+    name: FDC3 Desktop Agent Bridging
+    description: >-
+      FDC3 Desktop Agent Bridging (DAB) is a wire protocol that enables multiple Desktop Agent
+      implementations to interoperate, allowing applications running under different Desktop
+      Agents to share context and raise intents with each other. The bridging specification
+      defines a WebSocket-based protocol for agent-to-agent communication, enabling cross-agent
+      context broadcasting and cross-agent intent resolution within the same desktop environment
+      or across network boundaries.
+    humanURL: https://fdc3.finos.org/docs/agent-bridging/spec
+    baseURL: https://fdc3.finos.org
+    tags:
+      - Desktop Agent Bridging
+      - WebSocket
+      - Interoperability
+      - Financial Services
+      - Open Standard
+    properties:
+      - type: Documentation
+        url: https://fdc3.finos.org/docs/agent-bridging/spec
+      - type: GitHubRepository
+        url: https://github.com/finos/FDC3
+common:
+  - type: Website
+    url: https://fdc3.finos.org
+  - type: Documentation
+    url: https://fdc3.finos.org/docs/fdc3-intro
+  - type: GitHubOrg
+    url: https://github.com/finos
+  - type: GitHubRepository
+    url: https://github.com/finos/FDC3
+  - type: Slack
+    url: https://finos-lf.slack.com/messages/fdc3
+  - type: MailingList
+    url: mailto:fdc3+subscribe@finos.org
+  - type: Community
+    url: https://www.finos.org/community
+  - type: Blog
+    url: https://www.finos.org/blog
+  - type: Changelog
+    url: https://github.com/finos/FDC3/blob/main/CHANGELOG.md
+  - type: License
+    url: https://github.com/finos/FDC3/blob/main/LICENSE.md
+  - type: TermsOfService
+    url: https://github.com/finos/FDC3/blob/main/LICENSE.md
+  - type: Contributing
+    url: https://github.com/finos/FDC3/blob/main/CONTRIBUTING.md
+  - type: Status
+    url: https://github.com/finos/FDC3/releases
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

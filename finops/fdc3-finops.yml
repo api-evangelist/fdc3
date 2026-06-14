@@ -1,0 +1,101 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: FDC3
+providerId: fdc3
+publisherName: FDC3 / FINOS — Fintech Open Source Foundation (Linux Foundation project)
+serviceCategory: Open Standard / Specification
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Financial Services
+  - Fintech
+  - Desktop Interoperability
+  - Open Standard
+  - FINOS
+  - FinOps
+  - Cost Management
+description: >-
+  FOCUS-aligned FinOps for FDC3: the standard and its reference implementations (TypeScript/
+  JavaScript npm packages, JSON schemas, OpenAPI App Directory spec) are fully open source with
+  zero API call charges. FinOps for FDC3 adoption therefore tracks implementation and integration
+  costs rather than runtime usage fees. Key cost categories are: (1) engineering effort to
+  integrate the FDC3 API into desktop applications; (2) licensing cost of the Desktop Agent
+  platform chosen (OpenFin, Finsemble, Interop.io — each commercially licensed); (3) optional
+  FINOS membership fees if the organization wants governance participation; (4) infrastructure
+  cost of hosting an App Directory implementation. There is no per-call, per-message, or
+  subscription meter at the FDC3 standard layer.
+sources:
+  - https://fdc3.finos.org
+  - https://www.finos.org/membership
+  - https://github.com/finos/FDC3/blob/main/LICENSE.md
+costModel:
+  type: open-source
+  directAPICost: none
+  notes: >-
+    FDC3 itself has no API usage cost. Total cost of ownership for FDC3 adoption is driven
+    by Desktop Agent vendor licensing, engineering integration effort, and optional App
+    Directory hosting infrastructure.
+costDrivers:
+  - name: Desktop Agent Platform Licensing
+    category: Third-Party Software
+    description: >-
+      Commercial Desktop Agent platforms (OpenFin, Finsemble, Interop.io/Glue42) that implement
+      the FDC3 standard are licensed separately. Costs vary significantly by vendor and
+      seat count. This is the primary cost driver for FDC3 adoption.
+    billable: true
+    unit: per-seat or enterprise license
+  - name: FINOS Membership (Optional)
+    category: Governance / Community
+    description: >-
+      Optional FINOS membership for organizations wanting governance influence over FDC3
+      standard evolution. Ranges from free (Associate, non-profits) to $200,000/yr (Platinum).
+      Not required to use FDC3.
+    billable: true
+    unit: annual
+    tiers:
+      - name: Associate
+        cost: 0
+        currency: USD
+        period: annual
+      - name: Silver
+        cost: 10000
+        costHigh: 30000
+        currency: USD
+        period: annual
+      - name: Gold
+        cost: 50000
+        currency: USD
+        period: annual
+      - name: Platinum
+        cost: 200000
+        currency: USD
+        period: annual
+  - name: App Directory Hosting
+    category: Infrastructure
+    description: >-
+      Organizations that host their own FDC3-compliant App Directory incur infrastructure
+      costs for the REST API server. Cost depends on the implementation stack and scale
+      (number of registered applications, query volume).
+    billable: true
+    unit: infrastructure cost varies
+  - name: Engineering Integration
+    category: Engineering
+    description: >-
+      One-time and ongoing engineering effort to integrate the @finos/fdc3 npm package
+      into desktop applications and configure intent/context handlers.
+    billable: false
+    unit: engineering hours
+  - name: FDC3 Standard and npm Packages
+    category: API Usage
+    description: >-
+      The FDC3 specification and @finos/fdc3 npm packages are free with no usage charges.
+      Zero cost at the standard layer.
+    billable: false
+    unit: none

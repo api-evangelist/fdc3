@@ -1,0 +1,87 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: FDC3
+providerId: fdc3
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Financial Services
+  - Fintech
+  - Desktop Interoperability
+  - Open Standard
+  - FINOS
+description: >-
+  FDC3 is an open standard maintained by FINOS (Fintech Open Source Foundation) under the
+  Community Specification License 1.0 for the standard itself and Apache License 2.0 for code.
+  There are no usage fees, API call charges, or subscription costs for implementing or consuming
+  the FDC3 standard. The specification, TypeScript/JavaScript npm packages, JSON schemas, and
+  reference implementations are all freely available. FINOS membership (optional) ranges from
+  free Associate membership for non-profits to $200,000/yr Platinum for large corporations, and
+  grants governance participation rights — it is not required to use FDC3. Desktop Agent
+  implementations (e.g. OpenFin, Finsemble, Glue42/Interop.io) are commercially licensed
+  separately by their respective vendors.
+sources:
+  - https://fdc3.finos.org
+  - https://github.com/finos/FDC3/blob/main/LICENSE.md
+  - https://www.finos.org/membership
+plans:
+  - id: fdc3-open-standard
+    name: Open Standard (Free)
+    type: free
+    description: >-
+      The FDC3 specification, TypeScript/JavaScript API packages, JSON schemas, and reference
+      documentation are free for anyone to implement, use, or build upon under the Community
+      Specification License 1.0 (spec) and Apache 2.0 (code). No registration, API key, or
+      membership is required.
+    entries:
+      - name: Specification Access
+        description: Full access to FDC3 standard documents and JSON schemas
+        limit: unlimited
+      - name: npm Packages
+        description: '@finos/fdc3 TypeScript/JavaScript packages'
+        limit: unlimited
+      - name: App Directory OpenAPI
+        description: OpenAPI specification for App Directory implementations
+        limit: unlimited
+  - id: finos-associate
+    name: FINOS Associate Membership (Governance)
+    type: freemium
+    description: >-
+      Free FINOS membership for non-profits, government agencies, and academic institutions
+      that want to participate in FDC3 governance. Does not affect API access.
+    entries:
+      - name: Governance Participation
+        description: Voting rights and participation in FDC3 working groups
+        limit: included
+  - id: finos-silver
+    name: FINOS Silver Membership (Governance)
+    type: paid
+    description: >-
+      Paid FINOS membership for organizations wanting governance influence over FDC3 and other
+      FINOS standards. $10,000–$30,000/yr based on company size. Does not affect API access.
+    entries:
+      - name: Governance Participation
+        description: Voting rights, working group leadership, and early access to drafts
+        limit: included
+  - id: finos-gold
+    name: FINOS Gold Membership (Governance)
+    type: paid
+    description: >-
+      Gold-tier FINOS membership for $50,000/yr. Provides higher governance influence and
+      visibility in the FINOS ecosystem. Does not affect API access.
+    entries:
+      - name: Governance Participation
+        description: Enhanced voting rights and FDC3 steering committee participation
+        limit: included
+  - id: finos-platinum
+    name: FINOS Platinum Membership (Governance)
+    type: paid
+    description: >-
+      Platinum-tier FINOS membership at $200,000/yr for the largest institutions. Maximum
+      governance influence over FINOS standards including FDC3. Does not affect API access.
+    entries:
+      - name: Governance Participation
+        description: Full steering committee rights and top-tier FINOS visibility
+        limit: included

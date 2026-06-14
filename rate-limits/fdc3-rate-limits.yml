@@ -1,0 +1,60 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: FDC3
+providerId: fdc3
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Financial Services
+  - Fintech
+  - Desktop Interoperability
+  - Open Standard
+  - FINOS
+  - Rate Limiting
+description: >-
+  FDC3 is a specification standard, not a hosted API service. FINOS does not operate a
+  centralized FDC3 API endpoint, so FINOS imposes no rate limits on the standard itself.
+  Rate limits applicable to FDC3 usage depend entirely on the Desktop Agent implementation
+  (e.g., OpenFin, Finsemble, Interop.io/Glue42) and any App Directory implementations
+  deployed by organizations. The FDC3 App Directory REST API rate limits are governed by
+  whoever hosts that implementation. The npm packages (@finos/fdc3) are distributed via
+  the standard npm registry, subject to npm's own rate limits.
+notes: >-
+  Organizations implementing or consuming FDC3 should consult their chosen Desktop Agent
+  vendor for applicable rate limits. App Directory operators set their own limits. The
+  FDC3 GitHub repository (github.com/finos/FDC3) is subject to GitHub API rate limits
+  for programmatic access.
+sources:
+  - https://fdc3.finos.org
+  - https://github.com/finos/FDC3
+limits:
+  - name: FDC3 Desktop Agent API
+    scope: implementer
+    metric: varies
+    description: >-
+      No rate limits defined at the standard level. Limits are set by each Desktop Agent
+      vendor implementation (OpenFin, Finsemble, Interop.io, etc.).
+    limit: governed by Desktop Agent vendor
+  - name: FDC3 App Directory REST API
+    scope: implementer
+    metric: requests/minute
+    description: >-
+      No rate limits defined in the FDC3 App Directory specification. Limits are set
+      by each organization that deploys an App Directory implementation.
+    limit: governed by App Directory operator
+  - name: npm Package Registry (@finos/fdc3)
+    scope: public
+    metric: requests/minute
+    description: >-
+      The @finos/fdc3 npm package is hosted on the public npm registry. Standard npm
+      unauthenticated rate limits apply (600 requests/10 minutes per IP).
+    limit: 600 requests per 10 minutes (npm registry default)
+  - name: GitHub Repository (github.com/finos/FDC3)
+    scope: public
+    metric: requests/hour
+    description: >-
+      Programmatic access to the FDC3 GitHub repository is subject to GitHub REST API
+      rate limits. Unauthenticated: 60 req/hr. Authenticated: 5,000 req/hr.
+    limit: 60 requests/hour unauthenticated; 5000 requests/hour authenticated
