@@ -52,7 +52,7 @@ apis:
         url: https://github.com/finos/FDC3
       - type: TypeScriptSDK
         url: https://www.npmjs.com/package/@finos/fdc3
-      - type: Changelog
+      - type: ChangeLog
         url: https://github.com/finos/FDC3/blob/main/CHANGELOG.md
       - type: OpenSource
         url: https://github.com/finos/FDC3/blob/main/LICENSE.md
@@ -173,7 +173,7 @@ common:
     url: https://www.finos.org/community
   - type: Blog
     url: https://www.finos.org/blog
-  - type: Changelog
+  - type: ChangeLog
     url: https://github.com/finos/FDC3/blob/main/CHANGELOG.md
   - type: License
     url: https://github.com/finos/FDC3/blob/main/LICENSE.md
