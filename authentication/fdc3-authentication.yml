@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/app-directory-1.1.yaml, openapi/app-directory-1.2.yaml, openapi/app-directory-2.0.yaml,
+  openapi/app-directory-2.1.json, openapi/app-directory-2.2.json
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/app-directory-1.1.yaml
+  - openapi/app-directory-1.2.yaml
+  - openapi/app-directory-2.0.yaml
+  - openapi/app-directory-2.1.json
+  - openapi/app-directory-2.2.json

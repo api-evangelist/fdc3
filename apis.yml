@@ -157,6 +157,10 @@ apis:
       - type: GitHubRepository
         url: https://github.com/finos/FDC3
 common:
+  - type: DomainSecurity
+    url: security/fdc3-domain-security.yml
+  - type: Authentication
+    url: authentication/fdc3-authentication.yml
   - type: Website
     url: https://fdc3.finos.org
   - type: Documentation
