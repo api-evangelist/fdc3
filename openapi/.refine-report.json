@@ -1,0 +1,22 @@
+{
+  "provider": "fdc3",
+  "sources": [
+    "app-directory-2.1.json",
+    "app-directory-2.2.json",
+    "fdc3-application-api-openapi.yml"
+  ],
+  "outputs": [
+    "fdc3-application-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/app-directory-2.1.json",
+    "archived openapi/app-directory-2.2.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "app-directory-2.1.json: declared missing tag: Application",
+    "app-directory-2.2.json: declared missing tag: Application"
+  ],
+  "skipped": []
+}
