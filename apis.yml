@@ -179,6 +179,12 @@ apis:
   - type: OpenAPI
     url: openapi/fdc3-application-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/finos/FDC3/issues
+  - type: SecurityPolicy
+    url: https://github.com/finos/FDC3/blob/main/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/finos/FDC3/blob/main/CODE_OF_CONDUCT.md
   - type: AgenticAccess
     url: agentic-access/fdc3-agentic-access.yml
   - type: DomainSecurity
