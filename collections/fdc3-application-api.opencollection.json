@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FDC3 Directory Application API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an application definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/appd/v2/apps/:appId",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an application definition"
+        },
+        {
+          "info": {
+            "name": "Retrieve all application definitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/appd/v2/apps"
+          },
+          "docs": "Retrieve all application definitions"
+        },
+        {
+          "info": {
+            "name": "Retrieve an application definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/appd/v1/apps/:appId",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an application definition"
+        },
+        {
+          "info": {
+            "name": "Create a new application definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/appd/v1/apps",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new application definition"
+        },
+        {
+          "info": {
+            "name": "Retrieve a list of applications based on parameters provided.  Depending on implementation, parameter values should self describe search format and type (e.g. Regex)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/appd/v1/apps/search",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "The unique application identifier located within a specific application directory instance."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the application. The name should be unique within an FDC3 App Directory instance. The exception to the uniqueness constraint is that an App Directory can hold definitions for multiple versions of the same app. The same appName could occur in other directories. We are not currently specifying app name conventions in the document."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Version of the application. This allows multiple app versions to be defined using the same app name. This can be a triplet but can also include things like 1.2.5 (BETA)"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Optional title for the application, if missing use appName, typically used in a launcher UI."
+              },
+              {
+                "name": "tooltip",
+                "value": "",
+                "type": "query",
+                "description": "Optional tooltip description e.g. for a launcher"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Description of the application. This will typically be a 1-2 paragraph style blurb about the application. Allow mark up language"
+              },
+              {
+                "name": "intent_name",
+                "value": "",
+                "type": "query",
+                "description": "name of intent"
+              },
+              {
+                "name": "intent_displayName",
+                "value": "",
+                "type": "query",
+                "description": "displayName of intent"
+              },
+              {
+                "name": "intent_context",
+                "value": "",
+                "type": "query",
+                "description": "search contexts list"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of applications based on parameters provided.  Depending on implementation, parameter values should self describe search format and type (e.g. Regex)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

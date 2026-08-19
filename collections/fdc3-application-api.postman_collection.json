@@ -1,0 +1,1429 @@
+{
+  "item": [
+    {
+      "id": "b6627025-a17d-4967-8302-3cf6768704fe",
+      "name": "Application",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8ce48925-5bdd-49ba-a51b-50dc5f16b86c",
+          "name": "Retrieve an application definition",
+          "request": {
+            "name": "Retrieve an application definition",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c40f1ed-8a14-46f7-952d-75462dbaa29a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appId\": \"my-application\",\n  \"title\": \"My Application\",\n  \"description\": \"An example application that uses FDC3 and fully describes itself in an AppD record.\",\n  \"categories\": [\n    \"market data\",\n    \"research\",\n    \"news\"\n  ],\n  \"version\": \"1.0.0\",\n  \"tooltip\": \"My example application definition\",\n  \"lang\": \"en-US\",\n  \"icons\": [\n    {\n      \"src\": \"http://example.domain.com/assets/my-app-icon.png\",\n      \"size\": \"256x256\",\n      \"type\": \"image/png\"\n    }\n  ],\n  \"screenshots\": [\n    {\n      \"src\": \"http://example.domain.com/assets/my-app-screenshot-1.png\",\n      \"label\": \"The first screenshot of my example app\",\n      \"type\": \"image/png\",\n      \"size\": \"800x600\"\n    },\n    {\n      \"src\": \"http://example.domain.com/assets/my-app-screenshot-2.png\",\n      \"label\": \"The second screenshot of my example app\",\n      \"type\": \"image/png\",\n      \"size\": \"800x600\"\n    }\n  ],\n  \"contactEmail\": \"fdc3@finos.org\",\n  \"supportEmail\": \"fdc3-maintainers@finos.org\",\n  \"moreInfo\": \"http://example.domain.com/\",\n  \"publisher\": \"Example App, Inc.\",\n  \"type\": \"web\",\n  \"details\": {\n    \"url\": \"http://example.domain.com/app.html\"\n  },\n  \"hostManifests\": {\n    \"Finsemble\": {\n      \"window\": {\n        \"left\": 120,\n        \"top\": 120,\n        \"width\": 600,\n        \"height\": 800,\n        \"options\": {\n          \"minWidth\": 75\n        }\n      },\n      \"foreign\": {\n        \"components\": {\n          \"App Launcher\": {\n            \"launchableByUser\": true\n          },\n          \"Window Manager\": {\n            \"FSBLHeader\": true,\n            \"persistWindowState\": true\n          }\n        }\n      },\n      \"interop\": {\n        \"autoConnect\": true\n      }\n    },\n    \"Glue42\": {\n      \"type\": \"window\",\n      \"details\": {\n        \"height\": 800,\n        \"width\": 600,\n        \"left\": 120,\n        \"top\": 120,\n        \"mode\": \"tab\",\n        \"allowChannels\": true,\n        \"loader\": {\n          \"enabled\": true,\n          \"hideOnLoad\": true\n        }\n      },\n      \"customProperties\": {\n        \"folder\": \"FDC3 Toolbox\"\n      }\n    },\n    \"Web App Manifest\": \"http://example.domain.com/my-app.json\"\n  },\n  \"interop\": {\n    \"intents\": {\n      \"listensFor\": {\n        \"ViewChart\": {\n          \"contexts\": [\n            \"fdc3.instrument\"\n          ]\n        },\n        \"myApp.GetPrice\": {\n          \"contexts\": [\n            \"fdc3.instrument\"\n          ],\n          \"resultType\": \"myApp.quote\"\n        }\n      },\n      \"raises\": {\n        \"ViewOrders\": [\n          \"fdc3.instrument\",\n          \"fdc3.organization\"\n        ],\n        \"StartEmail\": [\n          \"fdc3.email\"\n        ]\n      }\n    },\n    \"userChannels\": {\n      \"broadcasts\": [\n        \"fdc3.instrument\",\n        \"fdc3.organization\"\n      ],\n      \"listensFor\": [\n        \"fdc3.instrument\",\n        \"fdc3.organization\"\n      ]\n    },\n    \"appChannels\": [\n      {\n        \"id\": \"myApp.quotes,\",\n        \"description\": \"Used to share a stream of quotes for currently displayed instrument and may be used to change the currently displayed symbol,\",\n        \"broadcasts\": [\n          \"myApp.quote\"\n        ],\n        \"listensFor\": [\n          \"fdc3.instrument\"\n        ]\n      }\n    ]\n  },\n  \"localizedVersions\": {\n    \"fr-FR\": {\n      \"title\": \"Mon application,\",\n      \"description\": \"Un exemple d'application qui utilise FDC3 et se décrit entièrement dans un enregistrement AppD.\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56df9ebe-0d64-494f-bc04-9ef6638f05fa",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 400,\n  \"message\": \"There was an error in your request.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9ffd1c7-39b3-4ccf-a7d9-673262bec09f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 403,\n  \"message\": \"Certificate authentication failed for the requested user.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e209062f-16ae-4559-aa6d-e96f87976f93",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"An internal server error occurred. See the response body for further details.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b6a3a76-fb82-499c-b616-8b88675fb82d",
+          "name": "Retrieve all application definitions",
+          "request": {
+            "name": "Retrieve all application definitions",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "058bc63c-a035-4f6b-8d4a-5fdc4ce22f29",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applications\": [\n    {\n      \"appId\": \"my-application\",\n      \"title\": \"My Application\",\n      \"description\": \"An example application that uses FDC3 and fully describes itself in an AppD record.\",\n      \"categories\": [\n        \"market data\",\n        \"research\",\n        \"news\"\n      ],\n      \"version\": \"1.0.0\",\n      \"tooltip\": \"My example application definition\",\n      \"lang\": \"en-US\",\n      \"icons\": [\n        {\n          \"src\": \"http://example.domain.com/assets/my-app-icon.png\",\n          \"size\": \"256x256\",\n          \"type\": \"image/png\"\n        }\n      ],\n      \"screenshots\": [\n        {\n          \"src\": \"http://example.domain.com/assets/my-app-screenshot-1.png\",\n          \"label\": \"The first screenshot of my example app\",\n          \"type\": \"image/png\",\n          \"size\": \"800x600\"\n        },\n        {\n          \"src\": \"http://example.domain.com/assets/my-app-screenshot-2.png\",\n          \"label\": \"The second screenshot of my example app\",\n          \"type\": \"image/png\",\n          \"size\": \"800x600\"\n        }\n      ],\n      \"contactEmail\": \"fdc3@finos.org\",\n      \"supportEmail\": \"fdc3-maintainers@finos.org\",\n      \"moreInfo\": \"http://example.domain.com/\",\n      \"publisher\": \"Example App, Inc.\",\n      \"type\": \"web\",\n      \"details\": {\n        \"url\": \"http://example.domain.com/app.html\"\n      },\n      \"hostManifests\": {\n        \"Finsemble\": {\n          \"window\": {\n            \"left\": 120,\n            \"top\": 120,\n            \"width\": 600,\n            \"height\": 800,\n            \"options\": {\n              \"minWidth\": 75\n            }\n          },\n          \"foreign\": {\n            \"components\": {\n              \"App Launcher\": {\n                \"launchableByUser\": true\n              },\n              \"Window Manager\": {\n                \"FSBLHeader\": true,\n                \"persistWindowState\": true\n              }\n            }\n          },\n          \"interop\": {\n            \"autoConnect\": true\n          }\n        },\n        \"Glue42\": {\n          \"type\": \"window\",\n          \"details\": {\n            \"height\": 800,\n            \"width\": 600,\n            \"left\": 120,\n            \"top\": 120,\n            \"mode\": \"tab\",\n            \"allowChannels\": true,\n            \"loader\": {\n              \"enabled\": true,\n              \"hideOnLoad\": true\n            }\n          },\n          \"customProperties\": {\n            \"folder\": \"FDC3 Toolbox\"\n          }\n        },\n        \"Web App Manifest\": \"http://example.domain.com/my-app.json\"\n      },\n      \"interop\": {\n        \"intents\": {\n          \"listensFor\": {\n            \"ViewChart\": {\n              \"contexts\": [\n                \"fdc3.instrument\"\n              ]\n            },\n            \"myApp.GetPrice\": {\n              \"contexts\": [\n                \"fdc3.instrument\"\n              ],\n              \"resultType\": \"myApp.quote\"\n            }\n          },\n          \"raises\": {\n            \"ViewOrders\": [\n              \"fdc3.instrument\",\n              \"fdc3.organization\"\n            ],\n            \"StartEmail\": [\n              \"fdc3.email\"\n            ]\n          }\n        },\n        \"userChannels\": {\n          \"broadcasts\": [\n            \"fdc3.instrument\",\n            \"fdc3.organization\"\n          ],\n          \"listensFor\": [\n            \"fdc3.instrument\",\n            \"fdc3.organization\"\n          ]\n        },\n        \"appChannels\": [\n          {\n            \"id\": \"myApp.quotes,\",\n            \"description\": \"Used to share a stream of quotes for currently displayed instrument and may be used to change the currently displayed symbol,\",\n            \"broadcasts\": [\n              \"myApp.quote\"\n            ],\n            \"listensFor\": [\n              \"fdc3.instrument\"\n            ]\n          }\n        ]\n      },\n      \"localizedVersions\": {\n        \"fr-FR\": {\n          \"title\": \"Mon application,\",\n          \"description\": \"Un exemple d'application qui utilise FDC3 et se décrit entièrement dans un enregistrement AppD.\"\n        }\n      }\n    },\n    {\n      \"appId\": \"fdc3-workbench\",\n      \"title\": \"FDC3 Workbench\",\n      \"description\": \"Development and test tool for FDC3 desktop agents and apps\",\n      \"categories\": [\n        \"developer tools\",\n        \"training\"\n      ],\n      \"version\": \"1.0.0\",\n      \"tooltip\": \"FDC3 Workbench\",\n      \"lang\": \"en-US\",\n      \"icons\": [\n        {\n          \"src\": \"https://fdc3.finos.org/toolbox/fdc3-workbench/fdc3-icon-256.png\"\n        }\n      ],\n      \"screenshots\": [\n        {\n          \"src\": \"https://fdc3.finos.org/docs/assets/fdc3-logo.png,\",\n          \"label\": \"FDC3 logo\"\n        }\n      ],\n      \"contactEmail\": \"fdc3@finos.org\",\n      \"supportEmail\": \"fdc3-maintainers@finos.org\",\n      \"publisher\": \"FDC3,\",\n      \"type\": \"web\",\n      \"details\": {\n        \"url\": \"https://fdc3.finos.org/toolbox/fdc3-workbench/\"\n      },\n      \"hostManifests\": {\n        \"Glue42\": {\n          \"type\": \"window\",\n          \"icon\": \"https://fdc3.finos.org/docs/assets/fdc3-logo.png\",\n          \"details\": {\n            \"height\": 640,\n            \"width\": 560,\n            \"left\": 120,\n            \"top\": 120,\n            \"mode\": \"tab\",\n            \"allowChannels\": true,\n            \"loader\": {\n              \"enabled\": true,\n              \"hideOnLoad\": true\n            }\n          },\n          \"customProperties\": {\n            \"folder\": \"FDC3 Toolbox\"\n          }\n        },\n        \"Finsemble\": {\n          \"window\": {\n            \"left\": 120,\n            \"top\": 120,\n            \"width\": 800,\n            \"height\": 750,\n            \"options\": {\n              \"minWidth\": 75\n            }\n          },\n          \"foreign\": {\n            \"components\": {\n              \"App Launcher\": {\n                \"launchableByUser\": true\n              },\n              \"Toolbar\": {\n                \"iconURL\": \"http://fdc3.finos.org/toolbox/fdc3-workbench/fdc3-icon-256.png\"\n              },\n              \"Window Manager\": {\n                \"FSBLHeader\": true,\n                \"persistWindowState\": true\n              }\n            }\n          },\n          \"interop\": {\n            \"autoConnect\": true\n          }\n        },\n        \"Web App Manifest\": \"https://example.com/fdc3-workbench.json\"\n      },\n      \"localizedVersions\": {\n        \"fr-FR\": {\n          \"title\": \"FDC3 Table de travail\",\n          \"description\": \"Outil de développement et de test pour les desktop agents et applications FDC3\"\n        }\n      }\n    }\n  ],\n  \"message\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd6a2036-e06f-439a-8398-cb49001e2894",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 400,\n  \"message\": \"There was an error in your request.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0651459e-3234-4f02-89f4-cba0e7bba9cb",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 403,\n  \"message\": \"Certificate authentication failed for the requested user.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1b1a42f-4ff9-44a0-b717-ad2529b58c74",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"An internal server error occurred. See the response body for further details.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab3e2e61-94af-427e-9395-a0561ae24893",
+          "name": "Retrieve an application definition",
+          "request": {
+            "name": "Retrieve an application definition",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddff2783-9a08-4c09-98da-131850edaf4a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appId\": \"string\",\n  \"name\": \"string\",\n  \"manifest\": \"string\",\n  \"manifestType\": \"string\",\n  \"version\": \"string\",\n  \"title\": \"string\",\n  \"tooltip\": \"string\",\n  \"description\": \"string\",\n  \"images\": [\n    {\n      \"url\": \"https://POiPgirN.myylcJXEjohZAXZ6b0o7Qtora3GpNmmRT2Hq\"\n    },\n    {\n      \"url\": \"https://MfRhWvkcXaULXnZTaOQee.oqycQIKHlU5kCkca3zgF\"\n    }\n  ],\n  \"contactEmail\": \"4R25e@MrCfKK.iquo\",\n  \"supportEmail\": \"U09-RL@foZlmeJclmchtK.afy\",\n  \"publisher\": \"string\",\n  \"icons\": [\n    {\n      \"icon\": \"http://QburAgMSyqKWGHsTeMJDQjOdwuw.ejiI23IKJPIoNSfftfTdMk\"\n    },\n    {\n      \"icon\": \"https://WdzZYDYmYN.rfixzKHoZ.Ct+5LNJ5v-U2zOrpQx-AZ\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"contexts\": [\n        \"string\",\n        \"string\"\n      ],\n      \"customConfig\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"contexts\": [\n        \"string\",\n        \"string\"\n      ],\n      \"customConfig\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cc43322-ed0b-4006-9075-b194e35fa4ed",
+              "name": "Bad request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f51bca8-3c4e-4916-ba1c-2c84c3e93366",
+              "name": "Forbidden: Certificate authentication is not allowed for the requested user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c0b12d8-5ecc-4dff-8c76-811584128d59",
+              "name": "Server error, see response body for further details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3e8250f-db01-439f-b6af-f56312038c01",
+          "name": "Create a new application definition",
+          "request": {
+            "name": "Create a new application definition",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"manifest\": \"<string>\",\n  \"manifestType\": \"<string>\",\n  \"version\": \"<string>\",\n  \"title\": \"<string>\",\n  \"tooltip\": \"<string>\",\n  \"description\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<uri>\"\n    },\n    {\n      \"url\": \"<uri>\"\n    }\n  ],\n  \"contactEmail\": \"<email>\",\n  \"supportEmail\": \"<email>\",\n  \"publisher\": \"<string>\",\n  \"icons\": [\n    {\n      \"icon\": \"<uri>\"\n    },\n    {\n      \"icon\": \"<uri>\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1aeb8438-a627-43f1-b7b4-a72f7ea061b7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"manifest\": \"<string>\",\n  \"manifestType\": \"<string>\",\n  \"version\": \"<string>\",\n  \"title\": \"<string>\",\n  \"tooltip\": \"<string>\",\n  \"description\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<uri>\"\n    },\n    {\n      \"url\": \"<uri>\"\n    }\n  ],\n  \"contactEmail\": \"<email>\",\n  \"supportEmail\": \"<email>\",\n  \"publisher\": \"<string>\",\n  \"icons\": [\n    {\n      \"icon\": \"<uri>\"\n    },\n    {\n      \"icon\": \"<uri>\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applications\": [\n    {\n      \"appId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"manifest\": \"<string>\",\n      \"manifestType\": \"<string>\",\n      \"version\": \"<string>\",\n      \"title\": \"<string>\",\n      \"tooltip\": \"<string>\",\n      \"description\": \"<string>\",\n      \"images\": [\n        {\n          \"url\": \"<uri>\"\n        },\n        {\n          \"url\": \"<uri>\"\n        }\n      ],\n      \"contactEmail\": \"<email>\",\n      \"supportEmail\": \"<email>\",\n      \"publisher\": \"<string>\",\n      \"icons\": [\n        {\n          \"icon\": \"<uri>\"\n        },\n        {\n          \"icon\": \"<uri>\"\n        }\n      ],\n      \"customConfig\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"intents\": [\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        }\n      ]\n    },\n    {\n      \"appId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"manifest\": \"<string>\",\n      \"manifestType\": \"<string>\",\n      \"version\": \"<string>\",\n      \"title\": \"<string>\",\n      \"tooltip\": \"<string>\",\n      \"description\": \"<string>\",\n      \"images\": [\n        {\n          \"url\": \"<uri>\"\n        },\n        {\n          \"url\": \"<uri>\"\n        }\n      ],\n      \"contactEmail\": \"<email>\",\n      \"supportEmail\": \"<email>\",\n      \"publisher\": \"<string>\",\n      \"icons\": [\n        {\n          \"icon\": \"<uri>\"\n        },\n        {\n          \"icon\": \"<uri>\"\n        }\n      ],\n      \"customConfig\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"intents\": [\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        }\n      ]\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf3d15f7-774e-4a74-a0d1-ef804e63a425",
+              "name": "Bad request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"manifest\": \"<string>\",\n  \"manifestType\": \"<string>\",\n  \"version\": \"<string>\",\n  \"title\": \"<string>\",\n  \"tooltip\": \"<string>\",\n  \"description\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<uri>\"\n    },\n    {\n      \"url\": \"<uri>\"\n    }\n  ],\n  \"contactEmail\": \"<email>\",\n  \"supportEmail\": \"<email>\",\n  \"publisher\": \"<string>\",\n  \"icons\": [\n    {\n      \"icon\": \"<uri>\"\n    },\n    {\n      \"icon\": \"<uri>\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07aac622-f5ae-43ee-a029-8586d54bce60",
+              "name": "Forbidden: Certificate authentication is not allowed for the requested user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"manifest\": \"<string>\",\n  \"manifestType\": \"<string>\",\n  \"version\": \"<string>\",\n  \"title\": \"<string>\",\n  \"tooltip\": \"<string>\",\n  \"description\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<uri>\"\n    },\n    {\n      \"url\": \"<uri>\"\n    }\n  ],\n  \"contactEmail\": \"<email>\",\n  \"supportEmail\": \"<email>\",\n  \"publisher\": \"<string>\",\n  \"icons\": [\n    {\n      \"icon\": \"<uri>\"\n    },\n    {\n      \"icon\": \"<uri>\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "393fe4e4-215e-418c-9ad4-1ee323a1de74",
+              "name": "Server error, see response body for further details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"manifest\": \"<string>\",\n  \"manifestType\": \"<string>\",\n  \"version\": \"<string>\",\n  \"title\": \"<string>\",\n  \"tooltip\": \"<string>\",\n  \"description\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<uri>\"\n    },\n    {\n      \"url\": \"<uri>\"\n    }\n  ],\n  \"contactEmail\": \"<email>\",\n  \"supportEmail\": \"<email>\",\n  \"publisher\": \"<string>\",\n  \"icons\": [\n    {\n      \"icon\": \"<uri>\"\n    },\n    {\n      \"icon\": \"<uri>\"\n    }\n  ],\n  \"customConfig\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"intents\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"contexts\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"customConfig\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b0baa32-b74f-4084-9b75-ef2f7ecd5724",
+          "name": "Retrieve a list of applications based on parameters provided.  Depending on implementation, parameter values should self describe search format and type (e.g. Regex)",
+          "request": {
+            "name": "Retrieve a list of applications based on parameters provided.  Depending on implementation, parameter values should self describe search format and type (e.g. Regex)",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "apps",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appId",
+                  "value": "<string>",
+                  "description": "The unique application identifier located within a specific application directory instance."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the application. The name should be unique within an FDC3 App Directory instance. The exception to the uniqueness constraint is that an App Directory can hold definitions for multiple versions of the same app. The same appName could occur in other directories. We are not currently specifying app name conventions in the document."
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "Version of the application. This allows multiple app versions to be defined using the same app name. This can be a triplet but can also include things like 1.2.5 (BETA)"
+                },
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "Optional title for the application, if missing use appName, typically used in a launcher UI."
+                },
+                {
+                  "disabled": false,
+                  "key": "tooltip",
+                  "value": "<string>",
+                  "description": "Optional tooltip description e.g. for a launcher"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Description of the application. This will typically be a 1-2 paragraph style blurb about the application. Allow mark up language"
+                },
+                {
+                  "disabled": false,
+                  "key": "intent_name",
+                  "value": "<string>",
+                  "description": "name of intent"
+                },
+                {
+                  "disabled": false,
+                  "key": "intent_displayName",
+                  "value": "<string>",
+                  "description": "displayName of intent"
+                },
+                {
+                  "disabled": false,
+                  "key": "intent_context",
+                  "value": "<string>",
+                  "description": "search contexts list"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d02e60eb-3035-449d-977f-9b3a3d8129fe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tooltip",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_context",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applications\": [\n    {\n      \"appId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"manifest\": \"<string>\",\n      \"manifestType\": \"<string>\",\n      \"version\": \"<string>\",\n      \"title\": \"<string>\",\n      \"tooltip\": \"<string>\",\n      \"description\": \"<string>\",\n      \"images\": [\n        {\n          \"url\": \"<uri>\"\n        },\n        {\n          \"url\": \"<uri>\"\n        }\n      ],\n      \"contactEmail\": \"<email>\",\n      \"supportEmail\": \"<email>\",\n      \"publisher\": \"<string>\",\n      \"icons\": [\n        {\n          \"icon\": \"<uri>\"\n        },\n        {\n          \"icon\": \"<uri>\"\n        }\n      ],\n      \"customConfig\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"intents\": [\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        }\n      ]\n    },\n    {\n      \"appId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"manifest\": \"<string>\",\n      \"manifestType\": \"<string>\",\n      \"version\": \"<string>\",\n      \"title\": \"<string>\",\n      \"tooltip\": \"<string>\",\n      \"description\": \"<string>\",\n      \"images\": [\n        {\n          \"url\": \"<uri>\"\n        },\n        {\n          \"url\": \"<uri>\"\n        }\n      ],\n      \"contactEmail\": \"<email>\",\n      \"supportEmail\": \"<email>\",\n      \"publisher\": \"<string>\",\n      \"icons\": [\n        {\n          \"icon\": \"<uri>\"\n        },\n        {\n          \"icon\": \"<uri>\"\n        }\n      ],\n      \"customConfig\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"intents\": [\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"contexts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"customConfig\": \"<object>\"\n        }\n      ]\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "692f4758-74f9-48a9-8296-0241f1ed4893",
+              "name": "Bad request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tooltip",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_context",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09d1c2fe-fbbe-4fdf-bef5-c51681b63990",
+              "name": "Forbidden: Certificate authentication is not allowed for the requested user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tooltip",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_context",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a955131-9c54-442f-826b-f051345a707b",
+              "name": "Server error, see response body for further details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "apps",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tooltip",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "intent_context",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2878,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/appd",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bd4d9433-9bff-477e-99b6-25fac4d4fd5f",
+    "name": "FDC3 Directory Application API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Application Directory specification providing both interface definition and objects necessary to construct an application directory service.",
+      "type": "text/plain"
+    }
+  }
+}
