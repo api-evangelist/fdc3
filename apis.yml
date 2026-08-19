@@ -36,7 +36,7 @@ tags:
 created: '2026-06-13'
 modified: '2026-06-13'
 url: https://raw.githubusercontent.com/api-evangelist/fdc3/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: fdc3:desktop-agent-api
   name: FDC3 Desktop Agent API
