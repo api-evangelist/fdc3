@@ -26,6 +26,14 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fdc3.png
 tags:
+  - Financial-Services
+  - Fintech
+  - Desktop Interoperability
+  - Open Standard
+  - FINOS
+  - Context Sharing
+  - Intents
+tags_raw:
   - Financial Services
   - Fintech
   - Desktop Interoperability
@@ -50,6 +58,13 @@ apis:
   humanURL: https://fdc3.finos.org/docs/api/spec
   baseURL: https://fdc3.finos.org
   tags:
+  - Desktop Agent
+  - Intents
+  - Context Sharing
+  - Channels
+  - Financial-Services
+  - Open Standard
+  tags_raw:
   - Desktop Agent
   - Intents
   - Context Sharing
@@ -84,6 +99,12 @@ apis:
   - App Directory
   - Application Registry
   - REST API
+  - Financial-Services
+  - Open Standard
+  tags_raw:
+  - App Directory
+  - Application Registry
+  - REST API
   - Financial Services
   - Open Standard
   properties:
@@ -109,6 +130,12 @@ apis:
   humanURL: https://fdc3.finos.org/docs/context/spec
   baseURL: https://fdc3.finos.org
   tags:
+  - Context Data
+  - JSON-Schema
+  - Financial Data
+  - Instruments
+  - Open Standard
+  tags_raw:
   - Context Data
   - JSON Schema
   - Financial Data
@@ -137,6 +164,12 @@ apis:
   tags:
   - Intents
   - Interoperability
+  - Financial-Services
+  - Workflows
+  - Open Standard
+  tags_raw:
+  - Intents
+  - Interoperability
   - Financial Services
   - Workflow
   - Open Standard
@@ -158,6 +191,12 @@ apis:
   humanURL: https://fdc3.finos.org/docs/agent-bridging/spec
   baseURL: https://fdc3.finos.org
   tags:
+  - Desktop Agent Bridging
+  - WebSocket
+  - Interoperability
+  - Financial-Services
+  - Open Standard
+  tags_raw:
   - Desktop Agent Bridging
   - WebSocket
   - Interoperability
