@@ -1,22 +1,26 @@
 {
   "provider": "fdc3",
   "sources": [
-    "app-directory-2.1.json",
-    "app-directory-2.2.json",
-    "fdc3-application-api-openapi.yml"
+    "_original/app-directory-2.0.yaml"
   ],
   "outputs": [
     "fdc3-application-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/app-directory-2.1.json",
-    "archived openapi/app-directory-2.2.json"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "app-directory-2.1.json: declared missing tag: Application",
-    "app-directory-2.2.json: declared missing tag: Application"
+    "4 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "app-directory-2.0.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "app-directory-2.0.yaml: declared missing tag: Application",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "_original/app-directory-2.2.json: archived document superseded by a larger archived document",
+    "_original/app-directory-2.1.json: archived document superseded by a larger archived document",
+    "_original/app-directory-1.2.yaml: archived document superseded by a larger archived document",
+    "_original/app-directory-1.1.yaml: archived document superseded by a larger archived document",
+    "fdc3-application-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
