@@ -241,6 +241,12 @@ apis:
   - type: OpenAPI
     url: openapi/fdc3-application-api-openapi.yml
 common:
+  - type: Plans
+    url: plans/fdc3-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/fdc3-rate-limits.yml
+  - type: FinOps
+    url: finops/fdc3-finops.yml
   - type: IssueTracker
     url: https://github.com/finos/FDC3/issues
   - type: SecurityPolicy
