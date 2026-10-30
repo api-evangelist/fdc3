@@ -1,4 +1,4 @@
-# FDC3 (fdc3)
+# FDC3
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,74 +66,145 @@
 
 FDC3 (Financial Desktop Connectivity and Collaboration Consortium) is an open standard hosted by FINOS for interoperability between financial desktop applications. The standard defines how applications launch other apps, share typed context data, raise and resolve intents across the financial desktop, and register themselves in an App Directory. FDC3 eliminates the need for custom bilateral agreements between software vendors and enables plug-and-play integration workflows for financial services firms. Current version is 2.2, licensed under the Community Specification License 1.0 with code released under Apache 2.0.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fdc3/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fdc3/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Fintech · Desktop Interoperability · Open Standard · FINOS · Context Sharing · Intents
 
-## Scope
+## FDC3 on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for FDC3 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fdc3/](https://apis.io/providers/fdc3/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Financial Services
-- Fintech
-- Desktop Interoperability
-- Open Standard
-- FINOS
-- Context Sharing
-- Intents
+- [FDC3 Desktop Agent API](https://apis.io/apis/fdc3/desktop-agent-api/) — The FDC3 Desktop Agent API is the primary interface for application interoperability on the financial desktop. It provides a JavaScript/TypeScript API that…
+- [FDC3 App Directory API](https://apis.io/apis/fdc3/app-directory-api/) — The FDC3 App Directory (AppD) is a REST API standard for registering and discovering financial desktop applications. Desktop Agents query App Directories to…
+- [FDC3 Context Data](https://apis.io/apis/fdc3/context-data/) — FDC3 Context Data defines a standard set of typed data structures used to carry information between financial applications when broadcasting or raising…
+- [FDC3 Intents](https://apis.io/apis/fdc3/intents/) — FDC3 Intents are standardized verbs that applications use to request functionality from other applications on the financial desktop. Standard intents…
+- [FDC3 Desktop Agent Bridging](https://apis.io/apis/fdc3/desktop-agent-bridging/) — FDC3 Desktop Agent Bridging (DAB) is a wire protocol that enables multiple Desktop Agent implementations to interoperate, allowing applications running…
+- [FDC3 Application API](https://apis.io/apis/fdc3/fdc3-application-api/) — The Application API from FDC3 — 5 operation(s) for application.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### FDC3 Desktop Agent API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The FDC3 Desktop Agent API is the primary interface for application interoperability on the financial desktop. It provides a JavaScript/TypeScript API that applications use to open other applications, raise intents to request functionality from peer apps, broadcast typed context data on channels, listen for incoming context and intents, discover available applications and their capabilities, and create private two-party communication channels.
+- [Fdc3 Agentic Access](https://apis.io/agentic-access/fdc3/fdc3-agentic-access/)
 
-- **Human URL:** [https://fdc3.finos.org/docs/api/spec](https://fdc3.finos.org/docs/api/spec)
+#### JSON Schema (1)
 
-### FDC3 App Directory API
+The data models the API reads and writes.
 
-The FDC3 App Directory (AppD) is a REST API standard for registering and discovering financial desktop applications. Desktop Agents query App Directories to resolve application definitions when launching apps or resolving intents. The v2 endpoints are the current standard, supporting retrieval of all app definitions and lookup by appId. Authentication is supported via HTTP Authorization Bearer JWT tokens.
+- [Appd.Schema](https://apis.io/schemas/fdc3/appd.schema/)
 
-- **Human URL:** [https://fdc3.finos.org/docs/app-directory/spec](https://fdc3.finos.org/docs/app-directory/spec)
+#### JSON-LD (1)
 
-### FDC3 Context Data
+Linked-data contexts for the provider's vocabulary.
 
-FDC3 Context Data defines a standard set of typed data structures used to carry information between financial applications when broadcasting or raising intents. Context types include instruments, positions, portfolios, contacts, organizations, orders, charts, country, currency, date range, email, and more. Each context type has a JSON schema definition.
+- [Fdc3 Context](https://apis.io/jsonld/fdc3/fdc3-context/)
 
-- **Human URL:** [https://fdc3.finos.org/docs/context/spec](https://fdc3.finos.org/docs/context/spec)
+#### Examples (1)
 
-### FDC3 Intents
+Example requests and responses.
 
-FDC3 Intents are standardized verbs that applications use to request functionality from other applications on the financial desktop. Standard intents include ViewChart, ViewQuote, ViewNews, ViewAnalysis, ViewInstrument, ViewHoldings, ViewOrders, ViewResearch, ViewProfile, ViewInteractions, ViewMessages, ViewChat, StartCall, StartChat, StartEmail, CreateInteraction, and CreateOrUpdateProfile.
+- [Fdc3 Workbench App](https://apis.io/examples/fdc3/fdc3-workbench-app/)
 
-- **Human URL:** [https://fdc3.finos.org/docs/intents/spec](https://fdc3.finos.org/docs/intents/spec)
+#### Collections (1)
 
-### FDC3 Desktop Agent Bridging
+Postman and Open Collection request collections.
 
-FDC3 Desktop Agent Bridging (DAB) is a wire protocol that enables multiple Desktop Agent implementations to interoperate, allowing applications running under different Desktop Agents to share context and raise intents with each other. The bridging specification defines a WebSocket-based protocol for agent-to-agent communication.
+- [FDC3 Directory Application API](https://apis.io/collections/fdc3/open-fdc3-application-api/)
 
-- **Human URL:** [https://fdc3.finos.org/docs/agent-bridging/spec](https://fdc3.finos.org/docs/agent-bridging/spec)
+#### Governance rules (1)
 
-## Common Properties
+Spectral rulesets for the provider's contracts.
 
-| Type | URL |
-|------|-----|
-| Website | https://fdc3.finos.org |
-| Documentation | https://fdc3.finos.org/docs/fdc3-intro |
-| GitHubOrg | https://github.com/finos |
-| GitHubRepository | https://github.com/finos/FDC3 |
-| Slack | https://finos-lf.slack.com/messages/fdc3 |
-| MailingList | mailto:fdc3+subscribe@finos.org |
-| Community | https://www.finos.org/community |
-| Blog | https://www.finos.org/blog |
-| Changelog | https://github.com/finos/FDC3/blob/main/CHANGELOG.md |
-| License | https://github.com/finos/FDC3/blob/main/LICENSE.md |
-| Contributing | https://github.com/finos/FDC3/blob/main/CONTRIBUTING.md |
-| Status | https://github.com/finos/FDC3/releases |
+- [FDC3 — jsonschema rules](https://apis.io/rules/fdc3/fdc3-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fdc3 Authentication](https://apis.io/security/fdc3/fdc3-authentication/)
+- [Fdc3 Domain Security](https://apis.io/security/fdc3/fdc3-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fdc3 Plans Pricing](https://apis.io/plans/fdc3/fdc3-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fdc3 Rate Limits](https://apis.io/rate-limits/fdc3/fdc3-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fdc3 Finops](https://apis.io/finops/fdc3/fdc3-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://fdc3.finos.org)
+- [Documentation](https://fdc3.finos.org/docs/fdc3-intro)
+- [Changelog](https://github.com/finos/FDC3/blob/main/CHANGELOG.md)
+- [Blog](https://www.finos.org/blog)
+- [Terms of service](https://github.com/finos/FDC3/blob/main/LICENSE.md)
+
+## API Evangelist rating
+
+**Kin Score 36.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 55.0 |
+| Contract governance | 9.8 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 18.4 |
+
+**Agent readiness 26.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fdc3/](https://apis.io/providers/fdc3/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FDC3: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fdc3/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
